@@ -12,15 +12,23 @@ export class TradeComponent implements OnInit {
 
   para = {code:'', volume:0}
   paraSell = {code:'', volume:0}
+  buyMsg:string = ''
+  sellMsg:string = ''
   ngOnInit(): void {
   }
 
   clickBuyStock(){
-      this.typicodeService.buyStock(this.para).subscribe()
+      this.typicodeService.buyStock(this.para).subscribe(
+        data=> this.buyMsg = 'trade completed!', 
+        err => this.buyMsg = 'trade failed! (Might due to symbol code not found)'
+      )
     }
   
   clickSellStock(){
-      this.typicodeService.sellStock(this.paraSell).subscribe()
+      this.typicodeService.sellStock(this.paraSell).subscribe(
+        data=> this.sellMsg = 'trade completed!', 
+        err => this.sellMsg = 'trade failed! (Might due to volume exceed available amount or symbol code not found)'
+      )
     }
 
 }

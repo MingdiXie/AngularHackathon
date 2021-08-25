@@ -6,7 +6,7 @@
     <input [(ngModel)]='para.volume' name='volume'/>
     <button (click)='clickBuyStock()'> buy </button>
 </form>
-
+<p>{{buyMsg}}</p>
 <h2>
     Sell Stock
 </h2>
@@ -15,4 +15,5 @@
     <input [(ngModel)]='paraSell.volume' name='volume'/>
     <button (click)='clickSellStock()'> sell </button>
 </form>
+<p>{{sellMsg}}</p>
 
