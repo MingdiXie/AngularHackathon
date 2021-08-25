@@ -1,6 +1,8 @@
-<p>trade works!</p>
+<h2>
+    Buy Stock
+</h2>
 <form>
-    <input [(ngModel)]='para.code' name='code'/>
+    <input [(ngModel)]='para.code' name='code' placeholder='code symbol'/>
     <input [(ngModel)]='para.volume' name='volume'/>
     <button (click)='clickBuyStock()'> buy </button>
 </form>
