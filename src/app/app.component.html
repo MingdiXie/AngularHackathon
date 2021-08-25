@@ -1,4 +1,8 @@
 <article>
+  <button (click)='findAll()'>
+    Get ALL Transactions
+  </button>
+  <p> {{reportData | json}} </p> 
   <form>
     <input [(ngModel)]='searchName' name='searchName' />
     <button> search </button>
