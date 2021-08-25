@@ -3,10 +3,11 @@
     Get ALL Transactions
   </button>
   <p> {{reportData | json}} </p> 
+  <h2>Search transaction by symbol</h2>
   <form>
     <input [(ngModel)]='searchName' name='searchName' />
-    <button> search </button>
-    <p> {{searchName}} </p> 
+    <button (click)='findSymbol()'> search </button>
+    <p> {{singleData | json}} </p> 
   </form>
   <app-trade></app-trade>
 </article>

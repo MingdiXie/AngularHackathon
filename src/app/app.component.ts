@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'my-app';
   searchName=''
   reportData={}
-
+  singleData={}
   constructor(private typicodeService:TypicodeService){}
 
   findAll(){
@@ -17,5 +17,12 @@ export class AppComponent {
     .subscribe((data)=>{
       console.log(this.reportData)
       this.reportData = data})
+  }
+
+  findSymbol(){
+    this.typicodeService.getShareBySymbol(this.searchName)
+    .subscribe(data => {
+      this.singleData = data
+    })
   }
 }

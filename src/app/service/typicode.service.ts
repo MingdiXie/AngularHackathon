@@ -9,8 +9,12 @@ export class TypicodeService {
   constructor(private http:HttpClient) { }
 
   getApiData(){
-    // return this.http.get("http://demospring-demospring.namdevops9.conygre.com/")
-    return this.http.get("http://jsonplaceholder.typicode.com/users/1")
+    return this.http.get("http://demospring-demospring.namdevops9.conygre.com/")
+    // return this.http.get("http://jsonplaceholder.typicode.com/users/1")
+  }
+
+  getShareBySymbol(para=''){
+    return this.http.get(`http://demospring-demospring.namdevops9.conygre.com/${para}`)
   }
 
   buyStock(para={code:'', volume: 0}){
