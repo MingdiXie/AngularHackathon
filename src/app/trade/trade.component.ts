@@ -11,16 +11,16 @@ export class TradeComponent implements OnInit {
   constructor(private typicodeService:TypicodeService) { }
 
   para = {code:'', volume:0}
+  paraSell = {code:'', volume:0}
   ngOnInit(): void {
   }
 
   clickBuyStock(){
-    // this.typicodeService.buyStock(this.para)
-    // .subscribe((data:any)=> {console.log(data)})
-    // console.log(this.para)
-    this.typicodeService.buyStock(this.para).subscribe()
+      this.typicodeService.buyStock(this.para).subscribe()
     }
   
-
+  clickSellStock(){
+      this.typicodeService.sellStock(this.paraSell).subscribe()
+    }
 
 }

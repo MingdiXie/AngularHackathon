@@ -21,4 +21,12 @@ export class TypicodeService {
       })
   }
 
+  sellStock(para={code:'', volume: 0}){
+    return this.http.post<any>("http://demospring-demospring.namdevops9.conygre.com/sell", 
+    {
+      symbol: para.code,
+      volume: para.volume,
+      })
+  }
+
 }

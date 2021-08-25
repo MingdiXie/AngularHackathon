@@ -6,3 +6,13 @@
     <input [(ngModel)]='para.volume' name='volume'/>
     <button (click)='clickBuyStock()'> buy </button>
 </form>
+
+<h2>
+    Sell Stock
+</h2>
+<form>
+    <input [(ngModel)]='paraSell.code' name='code' placeholder='code symbol'/>
+    <input [(ngModel)]='paraSell.volume' name='volume'/>
+    <button (click)='clickSellStock()'> sell </button>
+</form>
+
