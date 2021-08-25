@@ -12,4 +12,13 @@ export class TypicodeService {
     // return this.http.get("http://demospring-demospring.namdevops9.conygre.com/")
     return this.http.get("http://jsonplaceholder.typicode.com/users/1")
   }
+
+  buyStock(para={code:'', volume: 0}){
+    return this.http.post<any>("http://demospring-demospring.namdevops9.conygre.com/buy", 
+    {
+      symbol: para.code,
+      volume: para.volume,
+      })
+  }
+
 }
