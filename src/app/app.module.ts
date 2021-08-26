@@ -9,13 +9,15 @@ import { PieChartComponent} from './pie-chart/pie-chart.component';
 import { TransactionHistoryComponent } from './transaction-history/transaction-history.component'
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SymbolSearchComponent } from './symbol-search/symbol-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TradeComponent,
     PieChartComponent,
-    TransactionHistoryComponent
+    TransactionHistoryComponent,
+    SymbolSearchComponent
   ],
   imports: [
     BrowserModule,

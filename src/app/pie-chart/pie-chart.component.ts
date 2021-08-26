@@ -25,6 +25,8 @@ export class PieChartComponent implements OnInit {
       this.populate
     }
 
+  ngOnChanges(): void{
+  }
   populate(){
     this.saleData =[]
     this.reportedData.forEach(element => {
