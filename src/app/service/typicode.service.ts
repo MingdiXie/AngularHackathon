@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -33,12 +34,21 @@ export class TypicodeService {
       })
   }
 
+  getSharesOwnedQuantity(){
+    return this.http.get("http://demospring-demospring.namdevops9.conygre.com/sharesOwnedQuantity")
+  }
+
   getTotalMakertValue(){
     return this.http.get("http://demospring-demospring.namdevops9.conygre.com/networth")
   }
-  
+
   getTopFive(){
     return this.http.get("http://demospring-demospring.namdevops9.conygre.com/marketGainers")
   }
+  
+  getBottomFive(){
+    return this.http.get("http://demospring-demospring.namdevops9.conygre.com/marketLosers")
+  }
+  
 
 }

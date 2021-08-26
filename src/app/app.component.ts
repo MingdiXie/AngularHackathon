@@ -12,13 +12,14 @@ export class AppComponent implements OnInit, OnChanges{
   singleData={}
   bookValue = 0
   marketValue = {output:""}
-  mostGainers = {
-    mostGainerStock:[{ticker: "LWAC", changes: 8.18, price: "16.98", changesPercentage: "92.95454", companyName: "Locust Walk Acquisition Corp."}]
-  }
+  mostGainers = [{ticker: "LWAC", changes: 8.18, price: "16.98", changesPercentage: "92.95454", companyName: "Locust Walk Acquisition Corp."}]
+  mostLosers = [{ticker: "LWAC", changes: 8.18, price: "16.98", changesPercentage: "92.95454", companyName: "Locust Walk Acquisition Corp."}]
+  
 
   ngOnInit(): void{
     this.totalMarketValue()
     this.topFive()
+    this.bottomFive()
   }
 
   ngOnChanges(): void{
@@ -50,11 +51,25 @@ export class AppComponent implements OnInit, OnChanges{
   topFive(){
     this.typicodeService.getTopFive().subscribe(
       (data:any) => {
-        this.mostGainers = data
-        console.log(this.mostGainers)
-        console.log(this.mostGainers.mostGainerStock[0].ticker)
+        this.mostGainers = data.mostGainerStock.slice(0,5)
+        this.mostGainers.forEach(subData => {
+          subData.changesPercentage = subData.changesPercentage.substring(0,5)
+        })
       }
     )
+  }
+
+  bottomFive(){
+    this.typicodeService.getBottomFive().subscribe(
+      (data:any) => {
+        this.mostLosers = data.mostLoserStock.slice(0,5)
+        this.mostLosers.forEach(subData => {
+          subData.changesPercentage = subData.changesPercentage.substring(0,6)
+        })
+        console.log(this.mostLosers)
+      }
+    )
+
   }
   
 }
