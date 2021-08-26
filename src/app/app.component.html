@@ -19,8 +19,12 @@
         <div class="row">
           <div class="col-md-3 mb-3">
             <div class="card bg-primary text-white h-100">
-              <div class="card-body py-5">BOOK VALUE <i class="bi bi-cash-coin"></i> <br>
-                <i class="bi bi-currency-dollar">{{bookValue}}</i>
+              <div class="card-body py-5">My Stock Changes<i class="bi bi-cash-coin"></i> <br>
+                <i class="bi smallText" > 
+                <ol>
+                  <li class="bi smallText" *ngFor='let ch of change'>{{ch.symbol}} {{ch.change}}%</li>
+                </ol>
+                </i>
               </div>
             
             </div>

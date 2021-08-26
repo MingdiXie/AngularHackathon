@@ -14,12 +14,13 @@ export class AppComponent implements OnInit, OnChanges{
   marketValue = {output:""}
   mostGainers = [{ticker: "LWAC", changes: 8.18, price: "16.98", changesPercentage: "92.95454", companyName: "Locust Walk Acquisition Corp."}]
   mostLosers = [{ticker: "LWAC", changes: 8.18, price: "16.98", changesPercentage: "92.95454", companyName: "Locust Walk Acquisition Corp."}]
-  
-
+  change = [{symbol:"FB", change: 1}]
+  reportedData ={}
   ngOnInit(): void{
     this.totalMarketValue()
     this.topFive()
     this.bottomFive()
+    this.mySharesChange()
   }
 
   ngOnChanges(): void{
@@ -70,6 +71,12 @@ export class AppComponent implements OnInit, OnChanges{
       }
     )
 
+  }
+
+  mySharesChange(){
+    this.typicodeService.getMyStockChanges().subscribe(
+      (data:any) => { this.change = data})
+      
   }
   
 }

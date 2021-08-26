@@ -50,5 +50,7 @@ export class TypicodeService {
     return this.http.get("http://demospring-demospring.namdevops9.conygre.com/marketLosers")
   }
   
-
+  getMyStockChanges(){
+    return this.http.get("http://demospring-demospring.namdevops9.conygre.com//sharesOwnedChange")
+  }
 }
