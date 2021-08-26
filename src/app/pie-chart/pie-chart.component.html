@@ -1,12 +1,13 @@
-<p>pie-chart works!</p>
+<div>
 <ngx-charts-pie-chart 
     [results]="saleData"
     [legend]="true"
-    [legendTitle]="'Product Sale Report'" 
-    [view]="[1000,300]"
-    [labels]="true" >
+    [legendTitle]="'My Stock'" 
+    [view]="[500,300]"
+    [animations]="true"
+     >
 
 </ngx-charts-pie-chart>
-<p>{{size}}</p>
-<div *ngFor="let data of reportedData">{{data.symbol}}</div>
-<button (click)=populate()> Go <button>
+<!--<div *ngFor="let data of reportedData">{{data.symbol}}</div> -->
+<button (click)=populate()> Refresh </button>
+</div>

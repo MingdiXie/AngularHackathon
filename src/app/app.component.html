@@ -82,8 +82,9 @@
                 STOCK BREAKDOWN
               </div>
               <div class="card-body">
-                <canvas id="donut" width="400" height="200"></canvas>
-                
+                <div id="pieShares">
+                <app-pie-chart></app-pie-chart>
+                </div>
               </div>
             </div>
           </div>
@@ -104,13 +105,13 @@
         </div>
       </div>
     </main>
-
     <h2>Search transaction by symbol</h2>
   <form>
     <input [(ngModel)]='searchName' name='searchName' />
     <button (click)='findSymbol()'> search </button>
     <p> {{singleData | json}} </p> 
   </form>
-    <app-pie-chart><app-pie-chart>
+    
 
   <app-trade></app-trade>
+      

@@ -13,7 +13,7 @@ export interface Response {
 export class PieChartComponent implements OnInit {
   
   saleData = [
-    { name: "", value: 1 }
+    { name: "-", value: 0 }
   ];  
   size = this.saleData.length
   reportedData =[{symbol:'', quantity:1}]
@@ -22,16 +22,17 @@ export class PieChartComponent implements OnInit {
   ngOnInit(): void {
     this.typicodeService.getSharesOwnedQuantity()
       .subscribe((data:any)=>{this.reportedData=data})
-      
+      this.populate
     }
 
   populate(){
+    this.saleData =[]
     this.reportedData.forEach(element => {
       this.saleData.push({name: element.symbol,value: element.quantity})
     });
     this.size = this.saleData.length 
 
-    this.saleData = this.saleData;
+    this.saleData = [...this.saleData];
     console.log(this.saleData)
   }
 
