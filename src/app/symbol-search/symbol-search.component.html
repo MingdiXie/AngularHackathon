@@ -1,6 +1,19 @@
-   <h3>Search transaction by symbol</h3>
+   <h4>Search by symbol to see what transactions you have made for that share! </h4>
   <form>
     <input [(ngModel)]='searchName' name='searchName' />
     <button (click)='findSymbol()'> search </button>
-    <p> {{symbolData | json}} </p> 
+    <table>
+        <tr>
+            <th *ngFor = "let column of headers">
+            {{column}}
+            </th>
+        </tr>
+        <tr *ngFor = "let row of symbolData">
+            <td *ngFor = "let column of headers">
+                {{row[column]}}
+            </td>
+        </tr>
+            
+       
+        </table> 
   </form>

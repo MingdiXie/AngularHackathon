@@ -8,7 +8,7 @@ import {TypicodeService} from '../service/typicode.service'
 })
 export class SymbolSearchComponent implements OnInit {
   searchName=''
-  symbolData={}
+  symbolData=[]
 
   constructor(private typicodeService:TypicodeService) { }
 
@@ -17,9 +17,11 @@ export class SymbolSearchComponent implements OnInit {
 
   findSymbol(){
     this.typicodeService.getShareBySymbol(this.searchName)
-    .subscribe(data => {
+    .subscribe((data:any) => {
       this.symbolData = data
     })
   }
+
+  headers = ["id", "symbol", "transaction_price", "volume", "transaction_type", "transaction_date"];
 
 }
