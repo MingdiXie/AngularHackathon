@@ -10,7 +10,7 @@ export class TransactionHistoryComponent implements OnInit {
 
   title = 'my-app';
   searchName=''
-  reportData={}
+  allData = [];
   singleData={}
   constructor(private typicodeService:TypicodeService) { }
 
@@ -19,9 +19,13 @@ export class TransactionHistoryComponent implements OnInit {
   
   findAll(){
     this.typicodeService.getApiData()
-    .subscribe((data)=>{
-      console.log(this.reportData)
-      this.reportData = data})
+    .subscribe((data:any)=>{
+      console.log(this.allData)
+      this.allData = data})
   }
+
+  headers = ["id", "symbol", "transaction_price", "volume", "transaction_type", "transaction_date"];
+
+
 
 }
