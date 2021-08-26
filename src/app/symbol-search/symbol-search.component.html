@@ -1,0 +1,6 @@
+   <h3>Search transaction by symbol</h2>
+  <form>
+    <input [(ngModel)]='searchName' name='searchName' />
+    <button (click)='findSymbol()'> search </button>
+    <p> {{singleData | json}} </p> 
+  </form>

@@ -93,9 +93,10 @@
           <div class="col-md-12 mb-3">
             <div class="card">
               <div class="card-header">
-                <span><i class="bi bi-table me-2"></i></span> Data Table
+                <span><i class="bi bi-table me-2"></i></span> Search Transaction by Symbol
               </div>
               <div class="card-body">
+                <app-symbol-search> </app-symbol-search>
                 <div class="table-responsive">
                   
                 </div>
@@ -105,6 +106,8 @@
         </div>
       </div>
     </main>
+
+    <!-- to be moved to component-->
     <h2>Search transaction by symbol</h2>
   <form>
     <input [(ngModel)]='searchName' name='searchName' />
