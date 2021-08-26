@@ -6,8 +6,21 @@
   </button>
     </div>
     <div class="card-body">
-        <canvas id="networthChart" width="400" height="200">
-        <p> {{reportData | json}} </p></canvas>
+        <table>
+        <tr>
+            <th *ngFor = "let column of headers">
+            {{column}}
+            </th>
+        </tr>
+        <tr *ngFor = "let row of allData">
+            <td *ngFor = "let column of headers">
+                {{row[column]}}
+            </td>
+        </tr>
+            
+       
+        </table>
+        <p>  </p>
     </div>
 </div>
 
