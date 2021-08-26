@@ -37,14 +37,20 @@
           <div class="col-md-3 mb-3">
             <div class="card bg-warning text-white h-100">
               <div class="card-body py-5">TOP GAINERS <i class="bi bi-cash-coin"></i> <br>
-                <i class="bi bi-currency-dollar"></i></div>
+                <ol>
+                  <li class="bi smallText" *ngFor='let stock of mostGainers.mostGainerStock'>{{stock.ticker}}</li>
+                </ol>
+              </div>
           
             </div>
           </div>
           <div class="col-md-3 mb-3">
             <div class="card bg-danger text-white h-100">
               <div class="card-body py-5">TOP LOSERS <i class="bi bi-cash-coin"></i> <br>
-                <i class="bi bi-currency-dollar"></i></div>
+                <ol>
+                  <li class="bi smallText">abc</li>
+                </ol>
+              </div>
             
             </div>
           </div>

@@ -36,5 +36,9 @@ export class TypicodeService {
   getTotalMakertValue(){
     return this.http.get("http://demospring-demospring.namdevops9.conygre.com/networth")
   }
+  
+  getTopFive(){
+    return this.http.get("http://demospring-demospring.namdevops9.conygre.com/marketGainers")
+  }
 
 }
