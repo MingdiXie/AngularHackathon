@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http'
 import {FormsModule} from '@angular/forms';
-import { TradeComponent } from './trade/trade.component'
+import { TradeComponent } from './trade/trade.component';
+import { TransactionHistoryComponent } from './transaction-history/transaction-history.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    TradeComponent
+    TradeComponent,
+    TransactionHistoryComponent
   ],
   imports: [
     BrowserModule,
