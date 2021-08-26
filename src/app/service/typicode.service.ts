@@ -33,4 +33,8 @@ export class TypicodeService {
       })
   }
 
+  getTotalMakertValue(){
+    return this.http.get("http://demospring-demospring.namdevops9.conygre.com/networth")
+  }
+
 }
