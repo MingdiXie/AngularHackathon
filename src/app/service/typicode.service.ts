@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -31,6 +32,10 @@ export class TypicodeService {
       symbol: para.code,
       volume: para.volume,
       })
+  }
+
+  getSharesOwnedQuantity(){
+    return this.http.get("http://demospring-demospring.namdevops9.conygre.com/sharesOwnedQuantity")
   }
 
 }
