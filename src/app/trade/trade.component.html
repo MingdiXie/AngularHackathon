@@ -1,19 +1,37 @@
-<h2>
-    Buy Stock
-</h2>
-<form>
-    <input [(ngModel)]='para.code' name='code' placeholder='code symbol'/>
-    <input [(ngModel)]='para.volume' name='volume'/>
-    <button (click)='clickBuyStock()'> buy </button>
-</form>
-<p>{{buyMsg}}</p>
-<h2>
-    Sell Stock
-</h2>
-<form>
-    <input [(ngModel)]='paraSell.code' name='code' placeholder='code symbol'/>
-    <input [(ngModel)]='paraSell.volume' name='volume'/>
-    <button (click)='clickSellStock()'> sell </button>
-</form>
-<p>{{sellMsg}}</p>
+<div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="card h-100">
+              <div class="card-header">
+                <span class="me-2"><i class="bi bi-cash-stack"></i></span>
+                Buy Stock
+              </div>
+              <div class="card-body">
+                <form>
+                    <input [(ngModel)]='para.code' name='code' placeholder='code symbol'/>
+                    <input [(ngModel)]='para.volume' name='volume'/>
+                    <button (click)='clickBuyStock()'> buy </button>
+                </form>
+                <p>{{buyMsg}}</p>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="card h-100">
+              <div class="card-header">
+                <span class="me-2"><i class="bi bi-cash-stack"></i></span>
+                Sell Stock
+              </div>
+              <div class="card-body">
+                <form>
+                    <input [(ngModel)]='paraSell.code' name='code' placeholder='code symbol'/>
+                    <input [(ngModel)]='paraSell.volume' name='volume'/>
+                    <button (click)='clickSellStock()'> sell </button>
+                </form>
+                <p>{{sellMsg}}</p>
+                
+              </div>
+            </div>
+          </div>
+</div>
 
