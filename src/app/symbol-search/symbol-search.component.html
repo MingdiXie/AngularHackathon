@@ -1,19 +1,50 @@
-   <h4>Search by symbol to see what transactions you have made for that share! </h4>
-  <form>
-    <input [(ngModel)]='searchName' name='searchName' />
-    <button (click)='findSymbol()'> search </button>
-    <table>
-        <tr>
-            <th *ngFor = "let column of headers">
-            {{column}}
-            </th>
-        </tr>
-        <tr *ngFor = "let row of symbolData">
-            <td *ngFor = "let column of headers">
-                {{row[column]}}
-            </td>
-        </tr>
+<div class="col-md-6 mb-3">
+    <div class="card h-100">
+      
+
+        <div class="card-header">
+                <span class="me-2"><i class="bi bi-table"></i></span>
+                SEARCH TRANSACTION BY SYMBOL
+        </div>
+        <div class="card-body">
+        <h4>Search by symbol to see what transactions you have made for that share! </h4>     
+        <form>
+            <input [(ngModel)]='searchName' name='searchName' />
+            <button (click)='findSymbol()'> search </button>
+            <br>
+            <br>
+            <table id="symbols">
+            <tr>
+                <th *ngFor = "let column of headers">
+                    {{column}}
+                </th>
+            </tr>
+
+            <tr *ngFor = "let row of symbolData">
+                <td *ngFor = "let column of headers">
+                    {{row[column]}}
+                </td>
+            </tr>
+            </table> 
+        </form>
+        </div>
+    </div>
+</div>
+
+ 
+  
+    
+        
+            
+            
+          
+        
+            
+                
+          
             
        
-        </table> 
-  </form>
+      
+
+ 
+  

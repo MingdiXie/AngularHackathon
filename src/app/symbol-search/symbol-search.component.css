@@ -1,0 +1,29 @@
+#symbols {
+    border-collapse: collapse;
+    width: 100%;
+    max-height: 370px;
+    overflow-y: scroll;
+  }
+  
+  #symbols td, #symbols th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #symbols tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #symbols tr:hover {background-color: #ddd;}
+  
+  #symbols th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #D9261C;
+    color: white;
+  }
+
+  .card-body .h-100 {
+    width: 100%;
+    max-height: 370px;
+    overflow-y: scroll;
+}
