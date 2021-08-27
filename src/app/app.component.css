@@ -21,3 +21,11 @@
     width: 50%;
     display: inline;
   }
+
+  .col-md-3 {
+    border-radius: 2px;
+  }
+
+  .py-5 {
+    padding: -20%
+  }

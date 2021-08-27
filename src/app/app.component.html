@@ -19,8 +19,8 @@
 
          <div class="col-md-3 mb-3">
             <div class="card bg-primary text-white h-100">
-               <div class="card-body py-5">
-                  MY STOCK CHANGES <i class="bi bi-percent"></i> <br>
+               <div class="card-body py-5"> <div class="card-title"> MY STOCK CHANGES <i class="bi bi-percent"></i> </div>
+                  
                   <i class="bi smallText" >
                      <ol>
                         <li class="bi smallText" *ngFor='let ch of change'>{{ch.symbol}} {{ch.change}}%</li>
@@ -32,7 +32,7 @@
 
          <div class="col-md-3 mb-3">
             <div class="card bg-warning text-white h-100">
-               <div class="card-body py-5">MARKET VALUE <i class="bi bi-cash-coin"></i> <br>
+               <div class="card-body py-5"> <div class="card-title"> MARKET VALUE <i class="bi bi-cash-coin"></i> </div> 
                   <i class="bi bi-currency-dollar">{{marketValue.output}}</i>
                </div>
             </div>
@@ -41,7 +41,7 @@
          <div class="col-md-3 mb-3">
             <div class="card  bg-success text-white h-100">
                <div class="card-body py-5">
-                  TOP GAINERS <i class="bi bi-graph-up"></i> <br>
+                  <div class="card-title">TOP GAINERS <i class="bi bi-graph-up"></i>  </div> 
                   <ol>
                      <li class="bi smallText" *ngFor='let stock of mostGainers'>{{stock.ticker}} {{stock.changesPercentage}}%</li>
                   </ol>
@@ -52,7 +52,7 @@
          <div class="col-md-3 mb-3">
             <div class="card bg-danger text-white h-100">
                <div class="card-body py-5">
-                  TOP LOSERS <i class="bi bi-graph-down"></i> <br>
+                  <div class="card-title">TOP LOSERS <i class="bi bi-graph-down"></i>  </div> 
                   <ol>
                      <li class="bi smallText" *ngFor='let stock of mostLosers'>{{stock.ticker}} {{stock.changesPercentage}}%</li>
                   </ol>
