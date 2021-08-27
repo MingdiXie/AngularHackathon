@@ -1,120 +1,124 @@
 <!-- <article>
-  <button (click)='findAll()'>
-    Get ALL Transactions
-  </button>
-  <p> {{reportData | json}} </p> 
-  <h2>Search transaction by symbol</h2>
-  <form>
-    <input [(ngModel)]='searchName' name='searchName' />
-    <button (click)='findSymbol()'> search </button>
-    <p> {{singleData | json}} </p> 
-  </form>
-  <app-trade></app-trade>
-  <app-transaction-history> </app-transaction-history> 
-</article> -->
+   <button (click)='findAll()'>
+     Get ALL Transactions
+   </button>
+   <p> {{reportData | json}} </p> 
+   <h2>Search transaction by symbol</h2>
+   <form>
+     <input [(ngModel)]='searchName' name='searchName' />
+     <button (click)='findSymbol()'> search </button>
+     <p> {{singleData | json}} </p> 
+   </form>
+   <app-trade></app-trade>
+   <app-transaction-history> </app-transaction-history> 
+   </article> -->
+<main class="mt-5 pt-3">
+   <div class="container-fluid">
 
-    <main class="mt-5 pt-3">
-      <div class="container-fluid">
-   
-        <div class="row">
-          <div class="col-md-3 mb-3">
+      <div class="row"> <!-- start row-->
+
+         <div class="col-md-3 mb-3">
             <div class="card bg-primary text-white h-100">
-              <div class="card-body py-5">MY STOCK CHANGES <i class="bi bi-percent"></i> <br>
-                <i class="bi smallText" > 
-                <ol>
-                  <li class="bi smallText" *ngFor='let ch of change'>{{ch.symbol}} {{ch.change}}%</li>
-                </ol>
-                </i>
-              </div>
-            
+               <div class="card-body py-5">
+                  MY STOCK CHANGES <i class="bi bi-percent"></i> <br>
+                  <i class="bi smallText" >
+                     <ol>
+                        <li class="bi smallText" *ngFor='let ch of change'>{{ch.symbol}} {{ch.change}}%</li>
+                     </ol>
+                  </i>
+               </div>
             </div>
-          </div>
-    
-          <div class="col-md-3 mb-3">
+         </div>
+
+         <div class="col-md-3 mb-3">
             <div class="card bg-warning text-white h-100">
-              <div class="card-body py-5">MARKET VALUE <i class="bi bi-cash-coin"></i> <br>
-                <i class="bi bi-currency-dollar">{{marketValue.output}}</i></div>
-              
+               <div class="card-body py-5">MARKET VALUE <i class="bi bi-cash-coin"></i> <br>
+                  <i class="bi bi-currency-dollar">{{marketValue.output}}</i>
+               </div>
             </div>
-          </div>
+         </div>
 
-          <div class="col-md-3 mb-3">
+         <div class="col-md-3 mb-3">
             <div class="card  bg-success text-white h-100">
-              <div class="card-body py-5">TOP GAINERS <i class="bi bi-graph-up"></i> <br>
-                <ol>
-                  <li class="bi smallText" *ngFor='let stock of mostGainers'>{{stock.ticker}} {{stock.changesPercentage}}%</li>
-                </ol>
-              </div>
-          
+               <div class="card-body py-5">
+                  TOP GAINERS <i class="bi bi-graph-up"></i> <br>
+                  <ol>
+                     <li class="bi smallText" *ngFor='let stock of mostGainers'>{{stock.ticker}} {{stock.changesPercentage}}%</li>
+                  </ol>
+               </div>
             </div>
-          </div>
-          <div class="col-md-3 mb-3">
+         </div>
+
+         <div class="col-md-3 mb-3">
             <div class="card bg-danger text-white h-100">
-              <div class="card-body py-5">TOP LOSERS <i class="bi bi-graph-down"></i> <br>
-                <ol>
-                  <li class="bi smallText" *ngFor='let stock of mostLosers'>{{stock.ticker}} {{stock.changesPercentage}}%</li>
-                </ol>
-              </div>
-            
+               <div class="card-body py-5">
+                  TOP LOSERS <i class="bi bi-graph-down"></i> <br>
+                  <ol>
+                     <li class="bi smallText" *ngFor='let stock of mostLosers'>{{stock.ticker}} {{stock.changesPercentage}}%</li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+
+      </div> <!-- end row-->
+
+      <div class="row"> <!-- start row-->
+
+        <div class="col-md-6 mb-3">
+          <app-transaction-history></app-transaction-history>
+        </div>
+     
+        <div class="col-md-6 mb-3">
+          <div class="card h-100">
+            <div class="card-header">
+               <span class="me-2"><i class="bi bi-cash-stack"></i></span>
+               PORTFOLIO BREAKDOWN
+            </div>
+            <div class="card-body">
+               <div id="pieShares">
+                  <app-pie-chart></app-pie-chart>
+               </div>
             </div>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-md-6 mb-3">
+      </div>  <!-- end row-->
 
+      <div class="row"> <!-- start row-->
 
-          <!-- TO BE REPLACED WITH COMPONENT CODE-->
-            <!--<div class="card h-100">
-              <div class="card-header">
-                <span class="me-2"><i class="bi bi-cart-check"></i></span>
-                TRANSACTION HISTORY
-              </div>
-              <div class="card-body">
-                <canvas id="networthChart" width="400" height="200"></canvas>
-              </div>
-            </div> -->
-
-            <app-transaction-history></app-transaction-history>
-
-
-
-          </div>
-          <div class="col-md-6 mb-3">
-            <div class="card h-100">
-              <div class="card-header">
-                <span class="me-2"><i class="bi bi-cash-stack"></i></span>
-                PORTFOLIO BREAKDOWN
-              </div>
-              <div class="card-body">
-                <div id="pieShares">
-                <app-pie-chart></app-pie-chart>
-                </div>
-              </div>
+        <div class="col-md-6 mb-3">
+          <div class="card h-100">
+            <div class="card-header">
+               <span class="me-2"><i class="bi bi-currency-exchange"></i></span>
+               MAKE TRANSACTION
+            </div>
+            <div class="card-body">
+               <app-trade></app-trade>
             </div>
           </div>
         </div>
 
-
-        <div class="row">
-
-        <app-trade></app-trade>
-        <app-symbol-search> </app-symbol-search>
-          
-
-         
+        <div class="col-md-6 mb-3">
+          <div class="card h-100">
+            <div class="card-header">
+               <span class="me-2"><i class="bi bi-table"></i></span>
+              SEARCH TRANSACTION BY SYMBOL
+            </div>
+            <div class="card-body">
+               <app-symbol-search> </app-symbol-search>
+            </div>
+          </div>
         </div>
-      </div>
-    </main>
 
-    <!-- to be moved to component-->
-    <!-- <h2>Search transaction by symbol</h2>
-  <form>
-    <input [(ngModel)]='searchName' name='searchName' />
-    <button (click)='findSymbol()'> search </button>
-    <p> {{singleData | json}} </p> 
-  </form> -->
-    
+        
+      </div> <!-- end row-->
+   </div>
 
-  
-      
+</main>
+<!-- to be moved to component-->
+<!-- <h2>Search transaction by symbol</h2>
+   <form>
+     <input [(ngModel)]='searchName' name='searchName' />
+     <button (click)='findSymbol()'> search </button>
+     <p> {{singleData | json}} </p> 
+   </form> -->
