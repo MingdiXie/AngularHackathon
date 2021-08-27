@@ -11,9 +11,8 @@ export interface Response {
   styleUrls: ['./pie-chart.component.css']
 })
 export class PieChartComponent implements OnInit {
-  
   saleData = [
-    { name: "-", value: 0 }
+    { name: "-", value: 1 }
   ];  
   size = this.saleData.length
   reportedData =[{symbol:'', quantity:1}]
@@ -26,9 +25,14 @@ export class PieChartComponent implements OnInit {
     }
 
   ngOnChanges(): void{
+    this.populate
   }
+  
   populate(){
     this.saleData =[]
+    this.typicodeService.getSharesOwnedQuantity()
+      .subscribe((data:any)=>{this.reportedData=data})
+      this.populate
     this.reportedData.forEach(element => {
       this.saleData.push({name: element.symbol,value: element.quantity})
     });
