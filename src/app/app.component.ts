@@ -52,7 +52,7 @@ export class AppComponent implements OnInit, OnChanges{
   topFive(){
     this.typicodeService.getTopFive().subscribe(
       (data:any) => {
-        this.mostGainers = data.mostGainerStock.slice(0,5)
+        this.mostGainers = data.slice(1,6)
         this.mostGainers.forEach(subData => {
           subData.changesPercentage = subData.changesPercentage.substring(0,5)
         })
@@ -63,7 +63,7 @@ export class AppComponent implements OnInit, OnChanges{
   bottomFive(){
     this.typicodeService.getBottomFive().subscribe(
       (data:any) => {
-        this.mostLosers = data.mostLoserStock.slice(0,5)
+        this.mostLosers = data.slice(0,5)
         this.mostLosers.forEach(subData => {
           subData.changesPercentage = subData.changesPercentage.substring(0,6)
         })
