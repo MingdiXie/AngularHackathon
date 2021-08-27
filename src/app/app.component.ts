@@ -18,8 +18,8 @@ export class AppComponent implements OnInit, OnChanges{
   reportedData ={}
   ngOnInit(): void{
     this.totalMarketValue()
-    this.topFive()
-    this.bottomFive()
+    //this.topFive()
+    //this.bottomFive()
     this.mySharesChange()
   }
 
